@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+// import { FaMoon } from "react-icons/fa";
+import { FaSun } from "react-icons/fa";
 
 import portfoliologo from "../assets/logo/portfoliologo.png";
 
@@ -25,6 +27,10 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleToggleBtn = () => {
+    alert("Dark mode is coming soon");
+  };
 
   return (
     <motion.header
@@ -68,6 +74,28 @@ export default function Navbar() {
                 </NavLink>
               </li>
             ))}
+
+            {/* Dark Mode Button */}
+            {/* <li>
+              <button
+                onClick={() => alert("We are still working on this feature.")}
+                type="button"
+                className="rounded-md p-2 text-[#6f665d] transition-all duration-300 hover:bg-[#17130f] hover:text-white"
+                aria-label="Toggle dark mode"
+              >
+                <FaMoon />
+              </button>
+            </li> */}
+
+            {/* Light Mode Button */}
+            <button
+              onClick={handleToggleBtn}
+              type="button"
+              className="rounded-md p-2 text-[#6f665d] transition-all duration-300 hover:bg-[#17130f] hover:text-white"
+              aria-label="Toggle light mode"
+            >
+              <FaSun />
+            </button>
           </ul>
         </nav>
       </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { color } from "framer-motion";
+import PageTransition from "../components/PageTransition";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -64,6 +65,11 @@ const Contact = () => {
     setNameError("");
   };
 
+  const handleMessage = (e) => {
+    setMessage(e.target.value);
+    setMessageError("");
+  };
+
   return (
     <div className="bg-[#f6f0e6]">
       <Navbar />
@@ -78,7 +84,7 @@ const Contact = () => {
                   Let's build
                 </span>
 
-                <h2 className="mt-5 text-3xl font-semibold leading-tight text-[#3f3933] sm:text-4xl lg:text-5xl">
+                <h2 className="mt-5 text-3xl font-semibold leading-tight text-[#17130f] sm:text-4xl lg:text-5xl">
                   Bring the interface, product idea, or frontend challenge to
                   life.
                 </h2>
@@ -139,7 +145,7 @@ const Contact = () => {
                 <span className="uppercase text-xs font-mono text-[#bf5b39] font-extrabold">
                   Quick Message
                 </span>
-                <p className="mt-1 text-2xl font-semibold leading-tight text-[#3f3933] sm:text-4xl lg:text-3xl">
+                <p className="mt-1 text-2xl font-semibold leading-tight text-[#17130f] sm:text-4xl lg:text-3xl">
                   Tell me what you need.
                 </p>
               </div>
@@ -187,7 +193,10 @@ const Contact = () => {
                     type="email"
                     autoComplete="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setEmailError("");
+                    }}
                     placeholder="you@example.com"
                     className="w-full  rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
                   />
@@ -210,7 +219,10 @@ const Contact = () => {
                   <select
                     id="project"
                     value={project}
-                    onChange={(e) => setProject(e.target.value)}
+                    onChange={(e) => {
+                      setProject(e.target.value);
+                      setProjectError("");
+                    }}
                     className="w-full rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
                   >
                     <option value="">Select one</option>
@@ -241,7 +253,7 @@ const Contact = () => {
                   <textarea
                     id="message"
                     value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    onChange={handleMessage}
                     rows={6}
                     placeholder="Tell me about your project, idea, timeline, or anything you'd like me to know."
                     className="w-full resize-none rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
@@ -257,7 +269,7 @@ const Contact = () => {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-xl bg-[#17130f] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#2d2823]"
+                  className="inline-flex w-full items-center justify-center rounded-md bg-[#17130f] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#2d2823]"
                 >
                   Send Message
                 </button>

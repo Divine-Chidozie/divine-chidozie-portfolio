@@ -50,7 +50,7 @@ const FeaturedProject = () => {
 
             <Link
               to="/work/eventconnect"
-              className="mt-10 inline-flex rounded-xl bg-[#17130f] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#2d2823]"
+              className="mt-10 inline-flex rounded-xl bg-[#17130f] px-6 py-3 text-xs font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#2d2823]"
             >
               View Case Study
             </Link>

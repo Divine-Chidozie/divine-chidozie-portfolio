@@ -27,7 +27,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/divine-chidozie-igwe-ebi-48abb7363/"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg bg-[#d9ccbb] p-2 transition duration-300 hover:-translate-y-1 hover:shadow-lg"

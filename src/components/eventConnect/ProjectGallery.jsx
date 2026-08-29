@@ -1,11 +1,16 @@
+import eventconnecthome from "../../assets/images/eventconnecthome.png";
+import eventconnectsigning from "../../assets/images/eventconnectsignin.png";
+
 export default function ProjectGallery() {
   const screens = [
     {
+      img: eventconnecthome,
       title: "Home",
       description:
         "A welcoming landing page designed to guide users into the platform with clear navigation and a modern visual hierarchy.",
     },
     {
+      img: eventconnectsigning,
       title: "Authentication",
       description:
         "Simple and intuitive sign in and registration flows focused on accessibility and ease of use.",
@@ -46,13 +51,23 @@ export default function ProjectGallery() {
         {screens.map((screen) => (
           <div
             key={screen.title}
-            className="overflow-hidden rounded-3xl border border-[#ebe7e3] bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+            className="overflow-hidden border border-[#ebe7e3] bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
-            {/* Screenshot Placeholder */}
-            <div className="aspect-video border-b border-[#ebe7e3] bg-[#f6f0e6] flex items-center justify-center">
-              <p className="text-[#6f665d] font-medium">
-                {screen.title} Screenshot
-              </p>
+            {/* Screenshot */}
+            <div className="aspect-video overflow-hidden border-b border-[#ebe7e3] bg-[#f6f0e6]">
+              {screen.img ? (
+                <img
+                  src={screen.img}
+                  alt={`${screen.title} screenshot`}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="flex h-full items-center justify-center">
+                  <p className="font-medium text-[#6f665d]">
+                    {screen.title} Screenshot
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Content */}

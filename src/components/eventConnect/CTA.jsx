@@ -27,7 +27,7 @@ const CTA = () => {
           </Link>
 
           <Link
-            to="/"
+            to="/work"
             className="rounded-xl border border-white px-8 py-3 font-semibold text-white transition duration-300 hover:bg-white hover:text-[#17130f]"
           >
             View More Projects

@@ -4,15 +4,15 @@ import divinechidozie from "../assets/images/divinechidozie.png";
 
 export default function Hero() {
   return (
-    <section className="w-[90%] max-w-7xl mx-auto py-16 lg:py-24">
-      <div className="flex flex-col-reverse items-center gap-16 lg:flex-row lg:justify-between">
+    <section className="w-[90%] max-w-7xl mx-auto py-12 sm:py-16 lg:py-24">
+      <div className="flex flex-col items-center gap-12 md:flex-row md:items-center md:justify-between md:gap-10 lg:gap-16">
         {/* Content */}
-        <div className="max-w-2xl text-center lg:text-left">
+        <div className="max-w-2xl text-center md:flex-1 md:text-left">
           <span className="font-mono text-sm font-semibold uppercase tracking-[0.2em] text-[#bf5b39]">
             Hello, I am
           </span>
 
-          <h1 className="mt-4 text-5xl font-bold leading-tight text-[#17130f]  sm:text-6xl lg:text-7xl">
+          <h1 className="mt-4 text-5xl font-bold leading-tight text-[#17130f] sm:text-6xl lg:text-7xl">
             Divine Chidozie
           </h1>
 
@@ -29,7 +29,7 @@ export default function Hero() {
           </p>
 
           {/* Buttons */}
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
             <Link
               to="/work"
               className="rounded-xl bg-[#17130f] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2d2823]"
@@ -47,7 +47,7 @@ export default function Hero() {
         </div>
 
         {/* Image */}
-        <div className="relative flex justify-center">
+        <div className="relative flex w-full justify-center md:flex-1">
           {/* Image Card */}
           <div className="rounded-2xl border border-[#f6f0e6] bg-[#f6f0e6] p-4 shadow-2xl">
             <img
@@ -59,7 +59,7 @@ export default function Hero() {
           </div>
 
           {/* Floating Card */}
-          <div className="absolute -bottom-8 left-1/2 w-75 -translate-x-1/2 rounded-2xl border border-[#ebe7e3] bg-white p-5 shadow-xl lg:-bottom-5 lg:-right-8 lg:left-auto lg:translate-x-0">
+          <div className="absolute -bottom-8 left-1/2 w-75 -translate-x-1/2 rounded-2xl border border-[#ebe7e3] bg-white p-5 shadow-xl md:-bottom-5 md:-right-8 md:left-auto md:translate-x-0">
             <div className="flex items-center gap-3">
               <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
@@ -71,7 +71,7 @@ export default function Hero() {
               </h3>
             </div>
 
-            <p className="mt-3 text-sm leading-6 text-[#6f665d] font-semibold">
+            <p className="mt-3 text-sm font-semibold leading-6 text-[#6f665d]">
               Thoughtful design, reusable components, responsive layouts, and
               interfaces built with clarity.
             </p>

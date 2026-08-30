@@ -16,12 +16,12 @@ export default function Hero() {
             Divine Chidozie
           </h1>
 
-          <h2 className="mt-6 text-xl font-medium leading-10 text-[#3f3933] sm:text-2xl lg:text-3xl">
+          <h2 className="mt-5 text-xl font-medium leading-8 text-[#3f3933] sm:mt-6 sm:text-2xl sm:leading-9 lg:text-3xl lg:leading-10">
             Responsive interfaces shaped by clarity, consistency, and thoughtful
             engineering.
           </h2>
 
-          <p className="mt-7 text-base leading-8 text-[#6f665d] sm:text-lg">
+          <p className="mt-4 text-base leading-7 text-[#6f665d] sm:mt-6 sm:text-lg sm:leading-8">
             I value thoughtful structure, reusable components, and experiences
             that feel consistent across every screen. My work is guided by
             simplicity, attention to detail, and code that's built to remain
@@ -49,20 +49,21 @@ export default function Hero() {
         {/* Image */}
         <div className="relative flex w-full justify-center md:flex-1">
           {/* Image Card */}
-          <div className="rounded-2xl border border-[#f6f0e6] bg-[#f6f0e6] p-4 shadow-2xl">
+          <div className="w-full rounded-2xl border border-[#f6f0e6] bg-[#f6f0e6] p-3 shadow-2xl sm:p-4 md:w-auto">
             <img
               src={divinechidozie}
               alt="Portrait of Divine Chidozie"
               loading="eager"
-              className="w-64 object-contain sm:w-72 md:w-80 lg:w-105 xl:w-117.5"
+              className="w-full max-w-full object-contain sm:w-72 md:w-80 lg:w-105 xl:w-117.5"
             />
           </div>
 
           {/* Floating Card */}
-          <div className="absolute -bottom-8 left-1/2 w-75 -translate-x-1/2 rounded-2xl border border-[#ebe7e3] bg-white p-5 shadow-xl md:-bottom-5 md:-right-8 md:left-auto md:translate-x-0">
+          <div className="absolute -bottom-8 left-1/2 w-[90%] max-w-[300px] -translate-x-1/2 rounded-2xl border border-[#ebe7e3] bg-white p-5 shadow-xl md:-bottom-5 md:-right-8 md:left-auto md:w-75 md:max-w-none md:translate-x-0">
             <div className="flex items-center gap-3">
               <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
               </span>
 

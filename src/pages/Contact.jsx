@@ -136,25 +136,23 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* second div */}
-            <div className="w-full lg:w-1/2 flex flex-col rounded-2xl bg-[#fffaf0e6] p-8">
-              <div
-                className="flex flex-col gap-2
-          "
-              >
+         
+            {/* Second div - Contact Form */}
+            <div className="w-full lg:w-1/2 rounded-2xl bg-[#fffaf0e6] p-6 sm:p-8">
+              <div className="flex flex-col gap-2">
                 <span className="uppercase text-xs font-mono text-[#bf5b39] font-extrabold">
                   Quick Message
                 </span>
-                <p className="mt-1 text-2xl font-semibold leading-tight text-[#17130f] sm:text-4xl lg:text-3xl">
+
+                <p className="mt-1 text-2xl font-semibold leading-tight text-[#17130f] sm:text-3xl">
                   Tell me what you need.
                 </p>
               </div>
 
-              {/* form */}
               {/* Form */}
-              <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+              <form className="mt-8 w-full space-y-6" onSubmit={handleSubmit}>
                 {/* Name */}
-                <div>
+                <div className="w-full">
                   <label
                     htmlFor="name"
                     className="mb-2 block text-sm font-semibold text-[#17130f]"
@@ -169,18 +167,18 @@ const Contact = () => {
                     value={name}
                     onChange={handleNameChange}
                     placeholder="Your name"
-                    className="w-full rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
+                    className="block w-full rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
                   />
 
                   {nameError && (
-                    <span className="text-red-700 text-xs mt-1 font-bold ">
+                    <span className="mt-1 block text-xs font-bold text-red-700">
                       {nameError}
                     </span>
                   )}
                 </div>
 
                 {/* Email */}
-                <div>
+                <div className="w-full">
                   <label
                     htmlFor="email"
                     className="mb-2 block text-sm font-semibold text-[#17130f]"
@@ -198,17 +196,18 @@ const Contact = () => {
                       setEmailError("");
                     }}
                     placeholder="you@example.com"
-                    className="w-full  rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
+                    className="block w-full rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
                   />
+
                   {emailError && (
-                    <span className="text-red-700 text-xs mt-1 font-bold ">
+                    <span className="mt-1 block text-xs font-bold text-red-700">
                       {emailError}
                     </span>
                   )}
                 </div>
 
                 {/* Project Type */}
-                <div>
+                <div className="w-full">
                   <label
                     htmlFor="project"
                     className="mb-2 block text-sm font-semibold text-[#17130f]"
@@ -223,7 +222,7 @@ const Contact = () => {
                       setProject(e.target.value);
                       setProjectError("");
                     }}
-                    className="w-full rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
+                    className="block w-full rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
                   >
                     <option value="">Select one</option>
                     <option>Landing Page</option>
@@ -235,14 +234,14 @@ const Contact = () => {
                   </select>
 
                   {projectError && (
-                    <span className="text-red-700 text-xs mt-1 font-bold ">
+                    <span className="mt-1 block text-xs font-bold text-red-700">
                       {projectError}
                     </span>
                   )}
                 </div>
 
                 {/* Message */}
-                <div>
+                <div className="w-full">
                   <label
                     htmlFor="message"
                     className="mb-2 block text-sm font-semibold text-[#17130f]"
@@ -256,11 +255,11 @@ const Contact = () => {
                     onChange={handleMessage}
                     rows={6}
                     placeholder="Tell me about your project, idea, timeline, or anything you'd like me to know."
-                    className="w-full resize-none rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
-                  ></textarea>
+                    className="block w-full resize-none rounded-xl border border-[#e6ddd3] bg-white px-4 py-3 text-sm outline-none transition-all duration-300 focus:border-[#bf5b39] focus:ring-2 focus:ring-[#bf5b39]/10"
+                  />
 
                   {messageError && (
-                    <span className="text-red-700 text-xs mt-1 font-bold">
+                    <span className="mt-1 block text-xs font-bold text-red-700">
                       {messageError}
                     </span>
                   )}
@@ -273,11 +272,6 @@ const Contact = () => {
                 >
                   Send Message
                 </button>
-
-                {/* <p className="text-center text-xs leading-6 text-[#6f665d]">
-                  This form is powered by FormSubmit and delivers messages
-                  directly to my inbox.
-                </p> */}
               </form>
             </div>
           </div>

@@ -1,6 +1,32 @@
 body {
-  --color-bg: "#f6f0e6";
-  --color-cream: "#fffaf0";
-  --color-ink: "#17130f";
-  --color-muted: "#6f665d";
+  --color-bg: #f6f0e6;
+  --color-cream: #fffaf0;
+  --color-ink: #17130f;
+  --color-secondary: #3f3933;
+  --color-muted: #6f665d;
+  --color-accent: #bf5b39;
+  --color-border: #ebe7e3;
+  --color-border-dark: #d9d1c8;
+  --color-shadow: rgba(23, 19, 15, 0.12);
+
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Dark mode */
+
+body.dark {
+  --color-bg: #17130f;
+  --color-cream: #211d19;
+  --color-ink: #f6f0e6;
+  --color-secondary: #d5cdc4;
+  --color-muted: #b8afa5;
+  --color-accent: #d97852;
+  --color-border: #352f2a;
+  --color-border-dark: #51483f;
+  --color-shadow: rgba(0, 0, 0, 0.35);
 }

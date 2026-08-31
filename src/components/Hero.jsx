@@ -4,7 +4,7 @@ import divinechidozie from "../assets/images/divinechidozie.png";
 
 export default function Hero() {
   return (
-    <section className="w-[90%] max-w-7xl mx-auto py-12 sm:py-16 lg:py-24">
+    <section className="mx-auto w-[90%] max-w-7xl pt-14 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24">
       <div className="flex flex-col items-center gap-12 md:flex-row md:items-center md:justify-between md:gap-10 lg:gap-16">
         {/* Content */}
         <div className="max-w-2xl text-center md:flex-1 md:text-left">

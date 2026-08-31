@@ -1,11 +1,14 @@
+import { useTheme } from "../ThemeContext";
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaSun } from "react-icons/fa6";
+import { FaSun, FaMoon } from "react-icons/fa6";
 
 import portfoliologo from "../assets/logo/portfoliologo.png";
 
 export default function Navbar() {
+  const { darkMode, toggleTheme } = useTheme();
+
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -60,11 +63,11 @@ export default function Navbar() {
   }, [menuOpen]);
 
   // =========================
-  // DARK MODE PLACEHOLDER
+  // THEME TOGGLE
   // =========================
 
   const handleToggleBtn = () => {
-    alert("Dark mode is coming soon");
+    toggleTheme();
   };
 
   // =========================
@@ -84,13 +87,13 @@ export default function Navbar() {
         animate={{
           backgroundColor:
             scrolled || menuOpen
-              ? "rgba(246, 240, 230, 0.95)"
-              : "rgba(246, 240, 230, 0)",
+              ? "color-mix(in srgb, var(--color-bg) 95%, transparent)"
+              : "transparent",
         }}
         transition={{ duration: 0.3 }}
         className={`fixed left-0 top-0 z-[100] w-full transition-all duration-300 ${
           scrolled || menuOpen
-            ? "border-b border-[#ebe7e3] shadow-sm backdrop-blur-xl"
+            ? "border-b border-[var(--color-border)] shadow-sm backdrop-blur-xl"
             : ""
         }`}
       >
@@ -129,13 +132,15 @@ export default function Navbar() {
                     className={({ isActive }) =>
                       `group relative flex items-center gap-2 rounded-md px-3 py-2 font-mono text-sm font-bold transition-all duration-300 ${
                         isActive
-                          ? "bg-[#17130f] text-white"
-                          : "text-[#6f665d] hover:text-[#17130f]"
+                          ? "bg-[var(--color-ink)] text-[var(--color-bg)]"
+                          : "text-[var(--color-muted)] hover:text-[var(--color-ink)]"
                       }`
                     }
                   >
                     {({ isActive }) => (
                       <>
+                        {/* Number */}
+
                         <span
                           className={`text-[10px] transition-opacity duration-300 ${
                             isActive
@@ -146,12 +151,16 @@ export default function Navbar() {
                           0{index + 1}
                         </span>
 
+                        {/* Link Name */}
+
                         <span>{link.name}</span>
+
+                        {/* Active Indicator */}
 
                         {isActive && (
                           <motion.span
                             layoutId="activeNavIndicator"
-                            className="ml-1 h-1.5 w-1.5 rounded-full bg-[#bf5b39]"
+                            className="ml-1 h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"
                             transition={{
                               type: "spring",
                               stiffness: 500,
@@ -165,17 +174,21 @@ export default function Navbar() {
                 </li>
               ))}
 
-              {/* Current Page */}
+              {/* =====================================
+                  CURRENT PAGE
+              ====================================== */}
 
               <li className="ml-1 hidden items-center lg:flex">
-                <span className="h-5 w-px bg-[#d9d1c8]" />
+                <span className="h-5 w-px bg-[var(--color-border-dark)]" />
 
-                <span className="ml-4 font-mono text-[10px] font-semibold tracking-[0.15em] text-[#9b9187]">
+                <span className="ml-4 font-mono text-[10px] font-semibold tracking-[0.15em] text-[var(--color-muted)]">
                   {currentPage}
                 </span>
               </li>
 
-              {/* Light Mode */}
+              {/* =====================================
+                  THEME TOGGLE
+              ====================================== */}
 
               <li>
                 <motion.button
@@ -183,10 +196,12 @@ export default function Navbar() {
                   type="button"
                   whileHover={{ rotate: 15, scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
-                  className="rounded-md p-2 text-[#6f665d] transition-all duration-300 hover:bg-[#17130f] hover:text-white"
-                  aria-label="Toggle light mode"
+                  className="rounded-md p-2 text-[var(--color-muted)] transition-all duration-300 hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)]"
+                  aria-label={
+                    darkMode ? "Switch to light mode" : "Switch to dark mode"
+                  }
                 >
-                  <FaSun size={14} />
+                  {darkMode ? <FaSun size={14} /> : <FaMoon size={14} />}
                 </motion.button>
               </li>
             </ul>
@@ -205,8 +220,8 @@ export default function Navbar() {
             whileTap={{ scale: 0.92 }}
             className={`relative z-[110] flex h-11 w-11 items-center justify-center rounded-full border font-mono text-xs font-bold transition-all duration-300 md:hidden ${
               menuOpen
-                ? "border-[#17130f] bg-[#17130f] text-white"
-                : "border-[#17130f] bg-[#f6f0e6] text-[#17130f]"
+                ? "border-[var(--color-ink)] bg-[var(--color-ink)] text-[var(--color-bg)]"
+                : "border-[var(--color-ink)] bg-[var(--color-bg)] text-[var(--color-ink)]"
             }`}
           >
             <AnimatePresence mode="wait">
@@ -271,7 +286,7 @@ export default function Navbar() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.25 }}
-                className="fixed inset-0 top-[73px] z-[-1] bg-[#f6f0e6]"
+                className="fixed inset-0 top-[73px] z-[-1] bg-[var(--color-bg)]"
               />
 
               {/* Navigation Panel */}
@@ -293,23 +308,23 @@ export default function Navbar() {
                   duration: 0.35,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative z-[105] max-h-[calc(100vh-73px)] overflow-y-auto border-t border-[#ebe7e3] bg-[#f6f0e6]"
+                className="relative z-[105] max-h-[calc(100vh-73px)] overflow-y-auto border-t border-[var(--color-border)] bg-[var(--color-bg)]"
               >
                 <nav className="mx-auto w-[90%] max-w-7xl py-7">
                   {/* Mobile Header */}
 
                   <div className="mb-6 flex items-center justify-between">
                     <div>
-                      <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9b9187]">
+                      <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
                         Navigation
                       </p>
 
-                      <p className="mt-1 text-sm font-semibold text-[#17130f]">
+                      <p className="mt-1 text-sm font-semibold text-[var(--color-ink)]">
                         Explore the portfolio
                       </p>
                     </div>
 
-                    <span className="font-mono text-xs text-[#9b9187]">
+                    <span className="font-mono text-xs text-[var(--color-muted)]">
                       {currentPage}
                     </span>
                   </div>
@@ -339,8 +354,8 @@ export default function Navbar() {
                           className={({ isActive }) =>
                             `group flex items-center justify-between rounded-xl px-4 py-4 transition-all duration-300 ${
                               isActive
-                                ? "bg-[#17130f] text-white"
-                                : "text-[#6f665d] hover:bg-[#ebe7e3] hover:text-[#17130f]"
+                                ? "bg-[var(--color-ink)] text-[var(--color-bg)]"
+                                : "text-[var(--color-muted)] hover:bg-[var(--color-cream)] hover:text-[var(--color-ink)]"
                             }`
                           }
                         >
@@ -350,8 +365,8 @@ export default function Navbar() {
                                 <span
                                   className={`font-mono text-[10px] ${
                                     isActive
-                                      ? "text-white/40"
-                                      : "text-[#9b9187]"
+                                      ? "opacity-40"
+                                      : "text-[var(--color-muted)]"
                                   }`}
                                 >
                                   0{index + 1}
@@ -370,7 +385,9 @@ export default function Navbar() {
                                   x: 3,
                                 }}
                                 className={`text-xs ${
-                                  isActive ? "text-[#bf5b39]" : "text-[#9b9187]"
+                                  isActive
+                                    ? "text-[var(--color-accent)]"
+                                    : "text-[var(--color-muted)]"
                                 }`}
                               >
                                 ↗
@@ -381,7 +398,9 @@ export default function Navbar() {
                       </motion.li>
                     ))}
 
-                    {/* Light Mode */}
+                    {/* =====================================
+                        THEME TOGGLE
+                    ====================================== */}
 
                     <motion.li
                       initial={{
@@ -400,17 +419,21 @@ export default function Navbar() {
                       <button
                         onClick={handleToggleBtn}
                         type="button"
-                        className="flex w-full items-center justify-between rounded-xl px-4 py-4 font-mono text-sm font-bold text-[#6f665d] transition-all duration-300 hover:bg-[#ebe7e3] hover:text-[#17130f]"
+                        className="flex w-full items-center justify-between rounded-xl px-4 py-4 font-mono text-sm font-bold text-[var(--color-muted)] transition-all duration-300 hover:bg-[var(--color-cream)] hover:text-[var(--color-ink)]"
                       >
                         <div className="flex items-center gap-4">
-                          <span className="font-mono text-[10px] text-[#9b9187]">
+                          <span className="font-mono text-[10px] text-[var(--color-muted)]">
                             05
                           </span>
 
-                          <span>LIGHT MODE</span>
+                          <span>{darkMode ? "LIGHT MODE" : "DARK MODE"}</span>
                         </div>
 
-                        <FaSun className="text-xs" />
+                        {darkMode ? (
+                          <FaSun className="text-xs" />
+                        ) : (
+                          <FaMoon className="text-xs" />
+                        )}
                       </button>
                     </motion.li>
                   </ul>
@@ -428,14 +451,14 @@ export default function Navbar() {
                       duration: 0.4,
                       delay: 0.4,
                     }}
-                    className="mt-8 border-t border-[#ebe7e3] pt-5"
+                    className="mt-8 border-t border-[var(--color-border)] pt-5"
                   >
                     <div className="flex items-center justify-between">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#9b9187]">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-muted)]">
                         Divine Chidozie
                       </p>
 
-                      <span className="flex items-center gap-2 font-mono text-[10px] text-[#9b9187]">
+                      <span className="flex items-center gap-2 font-mono text-[10px] text-[var(--color-muted)]">
                         <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
                         Available
                       </span>

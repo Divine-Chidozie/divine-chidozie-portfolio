@@ -30,3 +30,59 @@ body.dark {
   --color-border-dark: #51483f;
   --color-shadow: rgba(0, 0, 0, 0.35);
 }
+
+/* ========================================
+   GLOBAL DARK MODE OVERRIDES
+======================================== */
+
+body.dark .bg-\[\#f6f0e6\] {
+  background-color: var(--color-bg);
+}
+
+body.dark .bg-\[\#fffaf0e6\] {
+  background-color: var(--color-cream);
+}
+
+body.dark .bg-\[\#fffaf0\] {
+  background-color: var(--color-cream);
+}
+
+body.dark .bg-white {
+  background-color: var(--color-cream);
+}
+
+body.dark .text-\[\#17130f\] {
+  color: var(--color-ink);
+}
+
+body.dark .text-\[\#3f3933\] {
+  color: var(--color-secondary);
+}
+
+body.dark .text-\[\#6f665d\] {
+  color: var(--color-muted);
+}
+
+body.dark .text-\[\#bf5b39\] {
+  color: var(--color-accent);
+}
+
+body.dark .text-\[\#5d554c\] {
+  color: var(--color-muted);
+}
+
+body.dark .border-\[\#f6f0e6\] {
+  border-color: var(--color-border);
+}
+
+body.dark .border-\[\#ebe7e3\] {
+  border-color: var(--color-border);
+}
+
+body.dark .border-gray-200 {
+  border-color: var(--color-border);
+}
+
+body.dark .border-gray-300 {
+  border-color: var(--color-border-dark);
+}

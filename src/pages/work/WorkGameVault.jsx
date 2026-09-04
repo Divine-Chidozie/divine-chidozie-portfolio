@@ -3,14 +3,8 @@ import { Link } from "react-router-dom";
 import gameVault from "../../assets/images/gameVault.png";
 
 const WorkGameVault = () => {
-  // const featureImplementation = "We are still working on this feature..";
-  // const handleCaseStudy = (e) => {
-  //   e.preventDefault();
-  //   alert(`${featureImplementation}`);
-  // };
-
   return (
-    <section className="mb-14 w-full">
+    <section className="mb-14` w-full">
       <div className="flex w-full flex-col gap-6 rounded-xl border border-gray-200 bg-[#fffaf0e6] p-4 sm:p-5 md:flex-row md:items-stretch md:gap-8 lg:p-6">
         {/* Project Image */}
         <div className="w-full shrink-0 md:w-[40%] lg:w-[38%]">

@@ -75,7 +75,7 @@ const Contact = () => {
       <Navbar />
 
       <main className="pt-20">
-        <section className="mx-auto w-[90%] max-w-7xl py-24">
+        <section className="mx-auto w-[90%] max-w-7xl py-24 pb-3">
           <div className="flex flex-col gap-12 lg:flex-row lg:items-stretch">
             {/* first div */}
             <div className="w-full lg:w-1/2 flex flex-col">
@@ -136,7 +136,6 @@ const Contact = () => {
               </div>
             </div>
 
-         
             {/* Second div - Contact Form */}
             <div className="w-full lg:w-1/2 rounded-2xl bg-[#fffaf0e6] p-6 sm:p-8">
               <div className="flex flex-col gap-2">

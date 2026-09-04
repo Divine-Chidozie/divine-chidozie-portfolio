@@ -83,7 +83,7 @@ const About = () => {
           <div className="flex flex-col gap-3 lg:flex-row lg:items-stretch">
             <div className="w-full lg:w-1/2 flex flex-col">
               <div className="bg-[#fffaf0e6] py-8 px-6">
-                <h3 className="text-black font-bold text-xl mb-5">
+                <h3 className="uppercase text-xs font-mono text-[#bf5b39] font-extrabold mb-2">
                   Experience
                 </h3>
 
@@ -182,7 +182,7 @@ const About = () => {
 
             <div className="w-full lg:w-1/2 flex flex-col rounded-lg bg-[#fffaf0e6] p-3">
               <div className="bg-[#fffaf0e6] py-4 px-6">
-                <h4 className="text-black font-bold text-xl mb-5">
+                <h4 className="uppercase text-xs font-mono text-[#bf5b39] font-extrabold mb-2">
                   Core Skills
                 </h4>
 

@@ -10,8 +10,6 @@ import EventPlanningPlatformLandingPage from "../assets/images/EventPlanningPlat
 import Footer from "../components/Footer";
 
 const Work = () => {
-
-
   return (
     <PageTransition>
       <div className="min-h-screen bg-[#f6f0e6]">

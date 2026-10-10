@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import divinechidozie from "../assets/images/divinechidozie.png";
+import divinephoto from "../assets/images/divinephoto.jpg";
 
 export default function Hero() {
   return (
@@ -51,7 +51,7 @@ export default function Hero() {
           {/* Image Card */}
           <div className="w-full rounded-2xl border border-[#f6f0e6] bg-[#f6f0e6] p-3 shadow-2xl sm:p-4 md:w-auto">
             <img
-              src={divinechidozie}
+              src={divinephoto}
               alt="Portrait of Divine Chidozie"
               loading="eager"
               className="w-full max-w-full object-contain sm:w-72 md:w-80 lg:w-105 xl:w-117.5"
